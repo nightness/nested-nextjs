@@ -1,0 +1,22 @@
+/* app/posts/posts.module.css */
+.container {
+    padding: 20px;
+}
+
+.postList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.postListItem {
+    margin-bottom: 10px;
+}
+
+.postLink {
+    text-decoration: none;
+    color: blue;
+}
+
+.postLink:hover {
+    text-decoration: underline;
+}
