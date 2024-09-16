@@ -1,85 +1,147 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Nested Next - NestJS and Next.js Hybrid Starter Template
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+An application integrating **Next.js** frontend with **NestJS** backend.
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project is a starter template that combines [NestJS](https://nestjs.com/) and [Next.js](https://nextjs.org/) to build a full-stack application with server-side rendering (SSR) and API capabilities. The current implementation includes example code for posts and blogs to demonstrate the integration between the frontend and backend.
 
-## Project setup
+The goal of this template is to provide a solid foundation for building applications that can be extended with UI components from [shadcn/ui](https://ui.shadcn.com/) and backend modules for features like authentication, user profiles, blogs, and more. Future enhancements include CLI commands to install and configure popular tools like Tailwind CSS, Prisma, and add frontend or backend modules to the project.
+
+## Features
+
+- **Next.js Frontend**: A React-based frontend with server-side rendering.
+- **NestJS Backend**: A robust backend framework for building scalable server-side applications.
+- **API Integration**: Demonstrates how to fetch data from the NestJS API in Next.js pages.
+- **Example Modules**: Includes example code for posts and blogs.
+- **TypeScript**: Written entirely in TypeScript for type safety and better developer experience.
+- **Testing Setup**: Configured with Jest for unit and integration testing.
+- **Linting and Formatting**: ESLint and Prettier are set up for code quality and consistency.
+- **Hot Reloading**: Nodemon is configured for development to automatically restart the server on code changes.
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js**: Ensure you have Node.js (v14.x or later) installed.
+- **npm or Yarn**: Use npm (comes with Node.js) or install Yarn.
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/nightness/nested-nextjs
+   cd nested-nextjs
+   ```
+
+2. **Install Dependencies**
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn install
+   ```
+
+### Running the Application
+
+#### Development Mode
+
+To start the application in development mode with hot reloading:
 
 ```bash
-$ yarn install
+npm run dev
 ```
 
-## Compile and run the project
+This command runs the NestJS server and Next.js frontend together. The application will be available at `http://localhost:3000`.
+
+#### Production Mode
+
+To build and run the application in production mode:
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+npm run build
+npm start
 ```
 
-## Run tests
+## Project Structure
 
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+```plaintext
+├── app/                    # Next.js frontend application
+│   ├── page.tsx            # Home page
+│   ├── posts/              # Posts pages
+│   │   ├── [id]/page.tsx   # Individual post page
+│   │   ├── page.tsx        # Posts list page
+│   │   └── posts.module.css# CSS module for posts
+│   ├── layout.tsx          # Root layout
+│   ├── error.tsx           # Error boundary
+│   ├── not-found.tsx       # 404 page
+│   ├── globals.css         # Global CSS
+│   ├── types/              # TypeScript types
+│   └── utils/              # Utility functions
+├── src/                    # NestJS backend application
+│   ├── app.controller.ts   # Root controller
+│   ├── app.module.ts       # Root module
+│   ├── main.ts             # Entry point
+│   └── blog/               # Blog module
+│       ├── blog.controller.ts
+│       ├── blog.service.ts
+│       └── interfaces/
+│           └── post.interface.ts
+├── jest.config.json        # Jest configuration
+├── next.config.mjs         # Next.js configuration
+├── package.json            # Project metadata and scripts
+├── tsconfig.json           # TypeScript configuration
+├── tsconfig.build.json     # TypeScript build configuration for NestJS
+├── tsconfig.server.json    # TypeScript configuration for server-side code
+├── eslint.config.mjs       # ESLint configuration
+├── .prettierrc             # Prettier configuration
+└── nodemon.json            # Nodemon configuration for development
 ```
 
-## Resources
+## Available Scripts
 
-Check out a few resources that may come in handy when working with NestJS:
+- **`npm run dev`**: Starts the development server with hot reloading.
+- **`npm run build`**: Builds the application for production.
+- **`npm start`**: Starts the built application in production mode.
+- **`npm run lint`**: Runs ESLint to check for linting errors.
+- **`npm run lint:fix`**: Runs ESLint and fixes fixable linting errors.
+- **`npm run format`**: Formats code using Prettier.
+- **`npm run test`**: Runs tests using Jest.
+- **`npm run test:watch`**: Runs tests in watch mode.
+- **`npm run test:coverage`**: Runs tests and generates a coverage report.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Usage
 
-## Support
+### Accessing the Application
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- **Home Page**: Visit `http://localhost:3000/` to see the welcome message and API response.
+- **Posts List**: Navigate to `http://localhost:3000/posts` to view a list of blog posts.
+- **Single Post**: Click on any post title to view its content.
 
-## Stay in touch
+### API Endpoints
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **Get Welcome Message**: `GET http://localhost:3000/api/hello`
+- **Get All Posts**: `GET http://localhost:3000/api/posts`
+- **Get Single Post**: `GET http://localhost:3000/api/posts/:id`
+
+## Future Plans
+
+- **CLI Commands**: Introduce CLI commands to install and configure tools like Tailwind CSS, Shadcn UI components, Prisma, etc.
+- **Modular Architecture**: Allow adding backend modules for features like authentication, user profiles, and more via CLI.
+- **UI Blocks**: Integrate shadcn/ui blocks that can be added to the application through CLI commands.
+- **Backend Blocks**: Provide backend modules that can be easily integrated into the project.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or new features.
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is **UNLICENSED**. See the [LICENSE](LICENSE) file for more details.
