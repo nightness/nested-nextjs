@@ -15,7 +15,7 @@ async function bootstrap() {
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Optional: Set global prefix for API routes
+  // Set global prefix for API routes
   app.setGlobalPrefix('api');
 
   // Middleware to handle Next.js routing
